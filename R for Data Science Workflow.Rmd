@@ -1,0 +1,67 @@
+---
+title: "R for Data Science: Workflow: basics"
+author: "tony fu"
+date: "8/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 4.1 Coding basics
+```{r}
+1 / 200 * 30
+#> [1] 0.15
+(59 + 73 + 2) / 3
+#> [1] 44.66667
+sin(pi / 2)
+#> [1] 1
+```
+You can create new objects with `<-`:
+```{r}
+x <- 3 * 4
+x
+```
+
+### 4.3 Calling functions
+```{r}
+seq(1,10)
+```
+
+There are two ways to display the varibles,first is to write the varible name in the next line, the second is to add a `( )` to the expression
+```{r}
+(x <- "hello world")
+```
+```{r}
+y <- 2
+y
+
+```
+
+
+### 4.4 Exercises
+1.Why does this code not work?
+```{}
+my_variable <- 10
+my_varıable
+#> Error in eval(expr, envir, enclos): object 'my_varıable' not found
+```
+Ans : The variable being printed is my_varıable, not my_variable: the seventh character is “ı” (“LATIN SMALL LETTER DOTLESS I”), not “i”.
+
+2.Tweak each of the following R commands so that they run correctly:
+```{r}
+library(tidyverse)
+# ggplot(data = mpg) + 
+#geom_point(mapping = aes(x = displ, y = hwy))
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl == 8)
+filter(diamonds, carat > 3)
+```
+
+```{r}
+?mpg
+```
+
